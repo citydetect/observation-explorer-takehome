@@ -57,8 +57,10 @@ sprawling one.
 
 ## Ground rules
 
-- **Time-box yourself to 4–6 hours**, then stop. Write down what you would do
-  next in `NOTES.md`. Unfinished-but-clear beats finished-but-tangled.
+- **Time-box yourself to 2–3 hours**, then stop. With the tools available
+  today that is enough for the core; we are not looking for polish on every
+  edge. Write down what you would do next in `NOTES.md`. Unfinished-but-clear
+  beats finished-but-tangled.
 - **Any stack.** We want you working in tools you know deeply. For reference,
   City Detect runs Python/FastAPI, PostGIS and H3 on the backend and
   React + TypeScript (React Native and Expo in production) with MapLibre GL on
@@ -71,9 +73,10 @@ sprawling one.
   Beyond that, storage is up to you: a database, an in-memory index, or
   something else.
 - **Any tools, including AI assistants.** Use whatever you normally would.
-  During the follow-up conversation we will ask you to walk through your code
-  and make a few changes to it live, so make sure you understand and can
-  defend every part of it. Tell us in `NOTES.md` how you used these tools.
+  In the follow-up session you will show us the app, walk us through the
+  code and make a few changes to it live, so make sure you understand and
+  can defend every part of it. Tell us in `NOTES.md` how you used these
+  tools.
 - **Basemap.** [OpenFreeMap](https://openfreemap.org) styles
   (`https://tiles.openfreemap.org/styles/liberty`) and
   [Protomaps](https://protomaps.com) work without an API key. Do not spend
@@ -81,17 +84,17 @@ sprawling one.
 - **Keep the data files as they are.** Derived artefacts (a database file, an
   index) can be built at setup time or committed; say which in your notes.
 
-## Submitting
+## What happens next
 
-1. Push your work to this repository. Any branch is fine; tell us which.
-2. Make sure a fresh clone can run it following the instructions in
-   `NOTES.md`. We will run it.
-3. Let us know you are done.
+When you are ready, reply to the email that sent you here and we will set up
+a 90-minute video session. You will share your screen, show us the app
+running, and walk us through how you built it. We will ask about the choices
+you made and then ask you to make a few small changes with us watching. At
+the end we will ask you to push the final version to this repository, with
+`NOTES.md` filled in.
 
-We will then set up a conversation of about an hour: a walkthrough of what you
-built, questions about the choices you made, and a few small modifications we
-will ask you to make with us watching. Nothing in that session needs
-preparation beyond knowing your own code.
+Nothing in that session needs preparation beyond knowing your own code. We do
+not need you to push anything before it, though you are welcome to.
 
 ## What we pay attention to
 
@@ -103,6 +106,6 @@ preparation beyond knowing your own code.
 - Design and UX judgement: hierarchy, colour, legends, empty and loading
   states, how it feels to use.
 - How you handle data that is not perfectly clean.
-- Communication: `NOTES.md` and the quality of the conversation afterwards.
+- Communication: how you show and explain what you built, and `NOTES.md`.
 
 Questions before you start are welcome; reply to the email that sent you here.

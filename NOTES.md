@@ -1,12 +1,13 @@
 # Notes
 
 Replace the prompts under each heading. Short and specific beats long and
-general.
+general. Fill this in before pushing the final version at the end of the
+follow-up session; bullet points are fine.
 
 ## How to run it
 
 From a fresh clone: prerequisites, setup, how to start the backend and the
-frontend, how to run tests. We will follow these literally.
+frontend, how to run tests.
 
 ## What I built
 
