@@ -1,7 +1,6 @@
 # Observation explorer
 
-A take-home exercise from City Detect. Thanks for spending time on it; we aim to
-make it worth your while, and we keep it short.
+A take-home exercise from City Detect.
 
 ## The scenario
 
@@ -9,103 +8,54 @@ Camera-equipped vehicles drive the streets of a city. As they go, a model
 records **observations** about the condition of the properties it passes:
 overgrown lots, debris, graffiti, boarded windows, damaged roofs, and so on.
 Each observation has a location, a time, a category, a severity, and an image.
-The same issue is usually seen again on later passes.
+The same issue is often seen again on later passes.
 
 The people who use this data work in a city's code enforcement or public works
-office. They want to answer questions like:
-
-- Where are the problems concentrated right now?
-- What exactly was seen at this property, and when?
-- Show me every severe roof issue reported in the last month.
+office. They want to know where the problems are, what was seen at a given
+property, and how things are changing.
 
 `data/` holds a real parcel layer for the centre of Lebanon, Tennessee and
-~30,000 synthetic observations over 90 days. [`data/DATA.md`](data/DATA.md)
-describes both files. Like real field data, it is not perfectly clean.
+about 30,000 observations over 90 days. The parcels are public data; the
+observations, their timing and their images are all generated for this
+exercise and do not depict any real property. [`data/DATA.md`](data/DATA.md)
+describes the files. Like real field data, they are not perfectly clean.
 
 ## What to build
 
-A small web application for exploring the observations: a backend that serves
-them over an HTTP API, and a frontend with a map.
+A small web app for exploring the observations: a backend that serves them
+over an HTTP API, and a frontend with a map.
 
-### Must have
+Beyond that, it is yours to shape. We are interested in what you decide the
+app should do for the people described above, and how it feels to use. Things
+you might consider: what to show at different zoom levels, how to filter, what
+a single observation looks like up close, what to do with the parcels, and
+what to do about the messier parts of the data.
 
-1. **An API** that returns observations for a map extent, with filters for
-   category, severity and date range. Be deliberate about what happens when the
-   extent contains a lot of observations.
-2. **An aggregate view.** When the map is zoomed out, show where observations
-   are concentrated without sending every point to the browser. Grid, hexagons,
-   H3, clustering, parcels: your call, but the aggregation should happen on the
-   server.
-3. **A map UI** that shows aggregates when zoomed out and individual
-   observations when zoomed in. Selecting an observation shows its image and
-   details.
-4. **A list** of the observations in the current view, in sync with the map.
-   Filters apply to both.
-5. **`NOTES.md`**, filled in. It matters as much as the code.
+## Notes
 
-### Nice to have
-
-Pick whichever interest you, or none. We would rather see a clean core than a
-sprawling one.
-
-- Join observations to parcels and show a per-parcel condition score.
-- Filters and map position in the URL, so a view can be shared.
-- Export the current view as CSV.
-- Collapse repeated observations of the same issue across passes.
-- A view of how activity changes over the 90-day window.
-- Tests where they earn their keep.
-
-## Ground rules
-
-- **Time-box yourself to 2–3 hours**, then stop. With the tools available
-  today that is enough for the core; we are not looking for polish on every
-  edge. Write down what you would do next in `NOTES.md`. Unfinished-but-clear
-  beats finished-but-tangled.
-- **Any stack.** We want you working in tools you know deeply. For reference,
-  City Detect runs Python/FastAPI, PostGIS and H3 on the backend and
-  React + TypeScript (React Native and Expo in production) with MapLibre GL on
-  the frontend. Node, Go, Rails, Django, DuckDB, SQLite + SpatiaLite,
-  in-memory spatial indexes, Leaflet, deck.gl, OpenLayers, Vue, Svelte: all
-  fine. The `starter/` folder has an optional FastAPI + React + MapLibre
-  skeleton if you would rather not spend time on scaffolding; delete it if you
-  go your own way.
-- **A real API.** The frontend should not load the data files directly.
-  Beyond that, storage is up to you: a database, an in-memory index, or
-  something else.
-- **Any tools, including AI assistants.** Use whatever you normally would.
-  In the follow-up session you will show us the app, walk us through the
-  code and make a few changes to it live, so make sure you understand and
-  can defend every part of it. Tell us in `NOTES.md` how you used these
-  tools.
-- **Basemap.** [OpenFreeMap](https://openfreemap.org) styles
+- **Time.** Spend as little or as much time as you have and would like to;
+  just tell us roughly how long it was. A couple of focused hours is plenty
+  for something we can talk about.
+- **Stack.** Use what you know well. For reference, City Detect runs
+  Python/FastAPI, PostGIS and H3 on the backend and React + TypeScript with
+  MapLibre GL on the frontend, but anything goes. The `starter/` folder has an
+  optional FastAPI + React + MapLibre skeleton if you would rather skip
+  scaffolding; delete it if you go your own way.
+- **Tools.** Use whatever you normally would, including AI assistants. In the
+  follow-up session we will explore the app together and try a few changes to
+  it, so it helps to be at home in everything it contains.
+- **Basemap.** [OpenFreeMap](https://openfreemap.org)
   (`https://tiles.openfreemap.org/styles/liberty`) and
-  [Protomaps](https://protomaps.com) work without an API key. Do not spend
-  time on tile tokens.
-- **Keep the data files as they are.** Derived artefacts (a database file, an
-  index) can be built at setup time or committed; say which in your notes.
+  [Protomaps](https://protomaps.com) work without an API key.
+- **Data.** Keep the files in `data/` as they are; anything derived from
+  them is up to you.
 
-## What happens next
+## The follow-up
 
-When you are ready, reply to the email that sent you here and we will set up
-a 90-minute video session. You will share your screen, show us the app
-running, and walk us through how you built it. We will ask about the choices
-you made and then ask you to make a few small changes with us watching. At
-the end we will ask you to push the final version to this repository, with
-`NOTES.md` filled in.
+A 90-minute video call. You share your screen, show us the app, and walk us
+through how you built it. We will talk about the choices you made and try a
+few small changes together. At the end we will ask you to push whatever you
+have to this repository.
 
-Nothing in that session needs preparation beyond knowing your own code. We do
-not need you to push anything before it, though you are welcome to.
-
-## What we pay attention to
-
-- Spatial reasoning: coordinates, extents, distance, aggregation, and what
-  happens at the edges.
-- API design: shapes, limits, errors, and how the frontend consumes it.
-- Frontend state and map integration: filters, selection, and sync between
-  map and list without fighting the map library.
-- Design and UX judgement: hierarchy, colour, legends, empty and loading
-  states, how it feels to use.
-- How you handle data that is not perfectly clean.
-- Communication: how you show and explain what you built, and `NOTES.md`.
-
-Questions before you start are welcome; reply to the email that sent you here.
+Book it whenever suits you: reply to the email that sent you here, before you
+start or once you are done. Questions are welcome the same way.

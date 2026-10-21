@@ -79,10 +79,11 @@ In the GeoJSON, records with no usable coordinates have `"geometry": null`.
 
 ## Caveats
 
-This is a synthetic dataset built for an exercise. The parcels are real; the
-observations, their timing and their images are generated and should not be
-read as statements about any actual property. Like real field data, it is not
-perfectly clean.
+Only the parcel layer is real. Every observation, its timestamp, its position
+and its image was generated for this exercise: the observations come from a
+simulation, and the images are AI-generated scenes that depict no real place.
+Nothing here is a statement about any actual property or its owner. Like
+real field data, it is not perfectly clean.
 
 ## Attribution
 
