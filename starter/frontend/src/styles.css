@@ -1,0 +1,42 @@
+:root {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  height: 100%;
+}
+
+.sidebar {
+  border-right: 1px solid #e5e5e5;
+  padding: 16px;
+  overflow: auto;
+}
+
+.sidebar h1 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.sidebar p {
+  color: #555;
+  font-size: 14px;
+}
+
+.map {
+  height: 100%;
+}
