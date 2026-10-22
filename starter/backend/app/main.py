@@ -1,10 +1,21 @@
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, HTTPException, Query
 
 from . import data
 
-app = FastAPI(title="Observation explorer API")
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    # Read both GeoJSON files once so the first request is not slow.
+    data.observations()
+    data.parcels()
+    yield
+
+
+app = FastAPI(title="Observation explorer API", lifespan=lifespan)
 
 
 @app.get("/api/health")

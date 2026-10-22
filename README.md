@@ -15,7 +15,7 @@ office. They want to know where the problems are, what was seen at a given
 property, and how things are changing.
 
 `data/` holds a real parcel layer for the centre of Lebanon, Tennessee and
-about 30,000 observations over 90 days. The parcels are public data; the
+about 30,000 observations over roughly three months. The parcels are public data; the
 observations, their timing and their images are all generated for this
 exercise and do not depict any real property. [`data/DATA.md`](data/DATA.md)
 describes the files. Like real field data, they are not perfectly clean.
@@ -34,16 +34,18 @@ what to do about the messier parts of the data.
 ## Notes
 
 - **Time.** Spend as little or as much time as you have and would like to;
-  just tell us roughly how long it was. A couple of focused hours is plenty
-  for something we can talk about.
+  just tell us roughly how long it was at the start of the call. A couple of
+  focused hours is plenty for something we can talk about. There is no
+  deadline beyond the call you book.
 - **Stack.** Use what you know well. For reference, City Detect runs
   Python/FastAPI, PostGIS and H3 on the backend and React + TypeScript with
   MapLibre GL on the frontend, but anything goes. The `starter/` folder has an
   optional FastAPI + React + MapLibre skeleton if you would rather skip
   scaffolding; delete it if you go your own way.
-- **Tools.** Use whatever you normally would, including AI assistants. In the
-  follow-up session we will explore the app together and try a few changes to
-  it, so it helps to be at home in everything it contains.
+- **Tools.** Use whatever you normally would, including AI assistants, both
+  while building and during the call. In the follow-up we will explore the
+  app together and try a few changes to it, so it helps to be at home in
+  everything it contains.
 - **Basemap.** [OpenFreeMap](https://openfreemap.org)
   (`https://tiles.openfreemap.org/styles/liberty`) and
   [Protomaps](https://protomaps.com) work without an API key.
@@ -52,10 +54,12 @@ what to do about the messier parts of the data.
 
 ## The follow-up
 
-A 90-minute video call. You share your screen, show us the app, and walk us
-through how you built it. We will talk about the choices you made and try a
-few small changes together. At the end we will ask you to push whatever you
-have to this repository.
+A 90-minute video call. Have the app running locally and your editor open.
+You share your screen, show us the app, and walk us through how you built
+it. We will talk about the choices you made and try a few small changes
+together. At the end we will ask you to push whatever you have to this
+repository. Push as you go if you like; we do not look at the repo before
+the call and commit history is not something we assess.
 
 Book it whenever suits you: reply to the email that sent you here, before you
 start or once you are done. Questions are welcome the same way.

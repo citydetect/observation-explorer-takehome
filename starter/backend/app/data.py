@@ -1,7 +1,8 @@
-"""Loads the data files from ../../data once, at startup.
+"""Reads the two GeoJSON files from ../../data into memory.
 
 This is the simplest thing that works. Replace it with whatever storage and
-indexing you decide on.
+indexing you decide on. `observations.csv` holds the same records as the
+GeoJSON, so only one of them needs loading.
 """
 
 from __future__ import annotations

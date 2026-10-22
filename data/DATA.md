@@ -5,10 +5,10 @@ Two files describe one study area: the centre of Lebanon, Tennessee, roughly
 
 ## `parcels.geojson`
 
-8,085 land parcels. Source: the [Regrid](https://regrid.com) Wilson
-County, TN public sample, clipped to the study area and reduced to the fields
-below. Geometry is `Polygon` or, occasionally, `MultiPolygon`. Coordinates are
-WGS84 (EPSG:4326).
+8,050 land parcels. Source: the [Regrid](https://regrid.com) Wilson
+County, TN public sample, clipped to the study area, with right-of-way and
+common-area polygons removed, and reduced to the fields below. Geometry is
+`Polygon` or, occasionally, `MultiPolygon`. Coordinates are WGS84 (EPSG:4326).
 
 | Field | Type | Meaning |
 |---|---|---|
@@ -23,7 +23,7 @@ WGS84 (EPSG:4326).
 | `ll_bldg_count` | int | Number of building footprints on the parcel |
 | `ll_bldg_footprint_sqft` | int | Total building footprint area, sq ft |
 | `usps_vacancy` | string | `Y` if USPS reports the address as vacant, `N` otherwise |
-| `parcel_condition` | string | Assessor condition code (`GD` good, `AV` average, `FR` fair, `PR` poor, ...) |
+| `parcel_condition` | string | Assessor condition code, as recorded: `VG`, `GD`, `AV`, `A`, `FR`, `F`, `PR` (very good to poor; `A`/`AV` and `F`/`FR` are the assessor's own inconsistency) |
 | `improvval`, `landval` | int | Assessed improvement and land values, USD |
 | `ll_gisacre` | float | Parcel area in acres, from the geometry |
 | `lat`, `lon` | float | A representative point inside the parcel |
@@ -32,11 +32,12 @@ Many fields are null for some parcels. Treat the attributes as context, not trut
 
 ## `observations.geojson` and `observations.csv`
 
-30,380 street-level observations, the same records in two formats.
-They were produced by a camera-equipped vehicle driving the study area in
-56 sessions between 2026-07-20 and 2026-10-13. Each record is one
-thing the system noticed on one pass. The same issue is usually seen again on
-later passes.
+30,541 street-level observations, the same records in two formats.
+They were produced by camera-equipped vehicles driving the study area in
+56 sessions between 2026-07-17 and 2026-10-14; sessions sometimes
+overlap because more than one vehicle is out. Each record is one thing the
+system noticed on one pass. The same issue is usually seen again on later
+passes.
 
 | Field | Type | Meaning |
 |---|---|---|
@@ -49,33 +50,35 @@ later passes.
 | `lon`, `lat` | float | Estimated location of the observed issue (WGS84). GeoJSON geometry uses these. |
 | `camera_lon`, `camera_lat` | float | Where the vehicle was when the image was captured |
 | `heading_deg` | float | Direction of travel at capture, compass degrees |
-| `image_url` | string | A representative image for the observation |
+| `image_url` | string | An image for the observation, 1024 × 768 JPEG. Images are illustrative of the category and severity, drawn from a pool and reused across observations; the same issue keeps the same image across passes. |
+| `thumbnail_url` | string | The same image at 320 px wide |
 
 In the GeoJSON, records with no usable coordinates have `"geometry": null`.
+Images are served with permissive CORS headers.
 
 ### Categories
 
 | Category | Count |
 |---|---|
-| `overgrown_vegetation` | 7,943 |
-| `accumulated_debris` | 5,162 |
-| `graffiti` | 2,251 |
-| `boarded_openings` | 2,847 |
-| `inoperable_vehicle` | 3,183 |
-| `roof_damage` | 3,016 |
-| `dumping` | 1,891 |
-| `damaged_fence` | 1,999 |
-| `broken_pavement` | 2,088 |
+| `overgrown_vegetation` | 7,848 |
+| `accumulated_debris` | 5,438 |
+| `graffiti` | 2,108 |
+| `boarded_openings` | 2,931 |
+| `inoperable_vehicle` | 3,333 |
+| `roof_damage` | 2,998 |
+| `dumping` | 1,620 |
+| `damaged_fence` | 2,192 |
+| `broken_pavement` | 2,073 |
 
 ### Severity
 
 | Severity | Count |
 |---|---|
-| 1 | 5,209 |
-| 2 | 9,442 |
-| 3 | 9,259 |
-| 4 | 4,641 |
-| 5 | 1,829 |
+| 1 | 4,883 |
+| 2 | 9,500 |
+| 3 | 9,549 |
+| 4 | 4,839 |
+| 5 | 1,770 |
 
 ## Caveats
 
