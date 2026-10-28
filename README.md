@@ -20,6 +20,14 @@ observations, their timing and their images are all generated for this
 exercise and do not depict any real property. [`data/DATA.md`](data/DATA.md)
 describes the files. Like real field data, they are not perfectly clean.
 
+## Getting set up
+
+1. Click **Use this template** at the top of this page and create the repository
+   in your own GitHub account. Make it **private**.
+2. In your new repository, go to Settings → Collaborators and invite the GitHub
+   username(s) from the email that sent you here.
+3. Clone it and read on.
+
 ## What to build
 
 A small web app for exploring the observations: a backend that serves them
@@ -57,9 +65,10 @@ what to do about the messier parts of the data.
 A 90-minute video call. Have the app running locally and your editor open.
 You share your screen, show us the app, and walk us through how you built
 it. We will talk about the choices you made and try a few small changes
-together. At the end we will ask you to push whatever you have to this
+together. At the end we will ask you to push whatever you have to your
 repository. Push as you go if you like; we do not look at the repo before
-the call and commit history is not something we assess.
+the call and commit history is not something we assess. The repository is
+yours to keep.
 
 Book it whenever suits you: reply to the email that sent you here, before you
 start or once you are done. Questions are welcome the same way.
