@@ -24,10 +24,7 @@ describes the files. Like real field data, they are not perfectly clean.
 
 1. Click **Use this template** at the top of this page and create the repository
    in your own GitHub account. Make it **private**.
-2. In your new repository, go to Settings → Collaborators and invite the GitHub
-   username(s) you were given. (Skip this if you were invited to a repository
-   already.)
-3. Clone it and read on.
+2. Clone it and read on.
 
 ## What to build
 
