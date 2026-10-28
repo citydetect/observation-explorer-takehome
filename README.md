@@ -25,7 +25,8 @@ describes the files. Like real field data, they are not perfectly clean.
 1. Click **Use this template** at the top of this page and create the repository
    in your own GitHub account. Make it **private**.
 2. In your new repository, go to Settings → Collaborators and invite the GitHub
-   username(s) from the email that sent you here.
+   username(s) you were given. (Skip this if you were invited to a repository
+   already.)
 3. Clone it and read on.
 
 ## What to build
@@ -42,33 +43,18 @@ what to do about the messier parts of the data.
 ## Notes
 
 - **Time.** Spend as little or as much time as you have and would like to;
-  just tell us roughly how long it was at the start of the call. A couple of
-  focused hours is plenty for something we can talk about. There is no
-  deadline beyond the call you book.
+  just tell us roughly how long it was. A couple of focused hours is plenty
+  for something we can talk about.
 - **Stack.** Use what you know well. For reference, City Detect runs
   Python/FastAPI, PostGIS and H3 on the backend and React + TypeScript with
   MapLibre GL on the frontend, but anything goes. The `starter/` folder has an
   optional FastAPI + React + MapLibre skeleton if you would rather skip
   scaffolding; delete it if you go your own way.
-- **Tools.** Use whatever you normally would, including AI assistants, both
-  while building and during the call. In the follow-up we will explore the
-  app together and try a few changes to it, so it helps to be at home in
-  everything it contains.
+- **Tools.** Use whatever you normally would, including AI assistants. In
+  the follow-up we will explore the app together and try a few changes to
+  it, so it helps to be at home in everything it contains.
 - **Basemap.** [OpenFreeMap](https://openfreemap.org)
   (`https://tiles.openfreemap.org/styles/liberty`) and
   [Protomaps](https://protomaps.com) work without an API key.
 - **Data.** Keep the files in `data/` as they are; anything derived from
   them is up to you.
-
-## The follow-up
-
-A 90-minute video call. Have the app running locally and your editor open.
-You share your screen, show us the app, and walk us through how you built
-it. We will talk about the choices you made and try a few small changes
-together. At the end we will ask you to push whatever you have to your
-repository. Push as you go if you like; we do not look at the repo before
-the call and commit history is not something we assess. The repository is
-yours to keep.
-
-Book it whenever suits you: reply to the email that sent you here, before you
-start or once you are done. Questions are welcome the same way.
